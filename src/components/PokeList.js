@@ -118,6 +118,7 @@ export default function PokeList() {
     const [next, setNext] = useState(false);
     const dispatch = useDispatch();
     const { pokemons } = useSelector((state) => state.pokemons);
+    // console.log(pokemons)
     const handleChangePage = () => {
         dispatch(changePage());
     };
@@ -165,7 +166,7 @@ export default function PokeList() {
                         <Grid container maxWidth="md" sx={styles.pokeContainer} spacing={{ xs: 0, md: 3 }} columns={{ xs: 12, sm: 12, md: 12, lg: 12 }}>
                             {pokemons.map((pokemon) => (
                                 <Grid sx={{ display: 'flex', justifyContent: 'center', paddingLeft: '0!important' }} item xs={12} sm={6} md={4} lg={3} key={pokemon.name}>
-                                    <Card component={Link} to={`pokemons/${pokemon.id}`} sx={{ width: '12rem', height: '19rem', textDecoration: 'none' }} elevation={0}>
+                                    <Card component={Link} to={`/pokemons/${pokemon.id}`} sx={{ width: '12rem', height: '19rem', textDecoration: 'none' }} elevation={0}>
                                         <div style={{ backgroundColor: '#F2F2F2', borderRadius: 5, padding: 30 }}>
                                             <CardMedia component="img" image={`${pokemon.url}`} alt="Missing image" sx={{ margin: 'auto', objectFit: 'contain', width: '100%', borderRadius: 5 }} />
                                         </div>
